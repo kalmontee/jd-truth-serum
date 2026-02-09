@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "JD Truth Serum",
+  "description": "Analyzes job descriptions for scope clarity, seniority alignment, and expectation transparency.",
+  "version": "0.1.0",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.linkedin.com/*",
+        "*://*.greenhouse.io/*",
+        "*://*.lever.co/*",
+        "*://*.indeed.com/*",
+        "*://*.dice.com/*",
+        "*://*.monster.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["index.html", "panel.js", "assets/panel.css", "assets/*", "vite.svg"],
+      "matches": [
+        "*://*.linkedin.com/*",
+        "*://*.greenhouse.io/*",
+        "*://*.lever.co/*",
+        "*://*.indeed.com/*",
+        "*://*.dice.com/*",
+        "*://*.monster.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_title": "JD Truth Serum"
+  }
+}
